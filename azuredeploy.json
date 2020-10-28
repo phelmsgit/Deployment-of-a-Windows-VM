@@ -103,7 +103,7 @@
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
-    "virtualNetworkName": "MyVNETs",
+    "virtualNetworkName": "MyVNET",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
     "networkSecurityGroupName": "default-NSG"
   },
@@ -142,10 +142,10 @@
       "properties": {
         "securityRules": [
           {
-            "name": "default-allow-3389",
+            "name": "default-deny-3389",
             "properties": {
               "priority": 1000,
-              "access": "Allow",
+              "access": "Deny",
               "direction": "Inbound",
               "destinationPortRange": "3389",
               "protocol": "Tcp",
